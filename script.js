@@ -46,15 +46,29 @@ document.querySelector(".clear").addEventListener("click", clear)
 
 function clear(){
   currentDisplay.innerHTML = "0"
+  coeff = 0
+  constant = 0
 }
+
+
+// Add click and logic
+
+
 
 function equal() {
 
 }
 
+
+
+// Add click and percentage
+document.querySelector(".percentage").addEventListener("click", percentage)
+
 function percentage() {
-  
+  currentDisplay.innerHTML = (coeff/constant)*100
 }
+
+
 
 function add() {
   
