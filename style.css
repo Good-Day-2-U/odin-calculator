@@ -1,0 +1,14 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.calcBody {
+  aspect-ratio: 12/16;
+  width: 30rem;
+  background-color: rgb(105, 105, 105);
+}
