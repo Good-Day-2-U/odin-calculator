@@ -2,35 +2,50 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
 .calcBody {
-  width: 25.5rem;
-  background-color: rgb(105, 105, 105);
+  width: 26rem;
+  height: 38rem;
+  background-color: rgb(57, 70, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 7px;
+  gap: 1rem;
+  border: 10px solid rgb(57, 70, 255);
+  border-radius: 25px;
+
 }
 
-.diplay {
-  background-color: black;
-  height: 10rem;
-  width: auto;
+.display {
+  background-color: rgb(201, 201, 201);
+  border: 3px solid black;
+  width: 24rem;
+  height: 6rem;
   flex: 1;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+  line-height: 0.25;
 }
-
-
-
-
 
 
 .keyPad {
+  background-color: rgb(255, 47, 47);
+  border: 5px solid rgb(255, 47, 47);
+  border-radius: 5px;
   flex: 1;
-  height: 25rem;
+  width: 25.5rem;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -41,11 +56,15 @@ body {
   width: 6rem;
   height: 6rem;
   border: 1px solid black;
-  background-color: aquamarine;
+  background-color: rgb(150, 150, 150);
   flex-shrink: 0;
   display: flex;
-  gap: 1rem;
+  gap: 7px;
   margin: 2px;
+}
+
+.keyPad div:hover {
+  opacity: 75%;
 }
 
 .equal {
