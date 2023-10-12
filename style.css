@@ -8,7 +8,50 @@ body {
 }
 
 .calcBody {
-  aspect-ratio: 12/16;
-  width: 30rem;
+  width: 25.5rem;
   background-color: rgb(105, 105, 105);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.diplay {
+  background-color: black;
+  height: 10rem;
+  width: auto;
+  flex: 1;
+}
+
+
+
+
+
+
+.keyPad {
+  flex: 1;
+  height: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.keyPad div {
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid black;
+  background-color: aquamarine;
+  flex-shrink: 0;
+  display: flex;
+  gap: 1rem;
+  margin: 2px;
+}
+
+.equal {
+  flex-grow: 2;
+}
+
+num {
+
 }
