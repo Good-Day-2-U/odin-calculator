@@ -5,6 +5,7 @@ let coeff = 0;
 let constant = 0;
 let operator;
 let result = 0;
+let temp1 = 0;
 
 // let input;
 
@@ -14,15 +15,16 @@ let outPutDisplay = currentDisplay.innerHTML
 
 // currentDisplay.innerHTML = input
 let isCoeff = true;
-let isConstant = false;
+// let isConstant = false;
 
 
 // Decide to show coefficient or constant on display
 if (isCoeff == true) {
-  coeff = result
-  currentDisplay.innerHTML = coeff
+  // coeff = temp
+  currentDisplay.innerHTML = result
 } else {
-  currentDisplay.innerHTML = constant
+  // constant = result
+  currentDisplay.innerHTML = temp1
 }
 
 
@@ -55,7 +57,7 @@ function addInput(event) {
   result = outPutDisplay;
   console.log("result: " + result);
 
-  if (isCoeff) {
+  if (isCoeff == true) {
     coeff = result;
     currentDisplay.innerHTML = coeff; // Update the innerHTML here
     console.log("cof " + coeff);
@@ -64,7 +66,7 @@ function addInput(event) {
     currentDisplay.innerHTML = constant;
     console.log("con " + constant);
   }
-
+  
   return result;
 }
 
@@ -79,17 +81,29 @@ function clear(){
   result = 0
   coeff = 0
   constant = 0
+  temp = 0
   isCoeff = true;
-  isConstant = false;
 }
 
 
 // Add click and logic
 
+let addition = false
+let subtraction = false
+let multiplication = false
+let division = false
 
+function calculate() {
+  console.log('evaluate clicked')
 
-function equal() {
+  isCoeff = true
+  addition = false
+  subtraction = false
+  multiplication = false
+  division = false
 
+  final = Number(temp1) + Number(result)
+  currentDisplay.innerHTML = final
 }
 
 
@@ -102,9 +116,18 @@ function percentage() {
 }
 
 
-
+//Addition
 function add() {
-  
+  addition = true
+  temp1 = result
+  isCoeff = false
+  result = 0
+  currentDisplay.innerHTML = "0"
+  console.log(addition)
+  console.log("temp" + temp1)
+  console.log("isCoeff" + isCoeff)
+  console.log(result)
+  return temp1
 }
 
 function subtract() {
