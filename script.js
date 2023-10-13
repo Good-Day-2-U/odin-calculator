@@ -97,16 +97,29 @@ let division = false
 function calculate() {
   console.log('evaluate clicked')
 
+  if (addition == true) {
+    final = Number(temp1) + Number(result)
+    currentDisplay.innerHTML = final.toFixed(5)
+  } else if (subtraction == true) {
+    final = Number(temp1) - Number(result)
+    currentDisplay.innerHTML = final.toFixed(5)
+  } else if (multiplication== true) {
+    final = Number(temp1) * Number(result)
+    currentDisplay.innerHTML = final.toFixed(5)
+  } else if (division == true) {
+    final = Number(temp1) / Number(result)
+    currentDisplay.innerHTML = final.toFixed(5)
+  } else [
+    null
+  ]
+
+
+
   // isCoeff = true
   addition = false
   subtraction = false
   multiplication = false
   division = false
-
-  final = Number(temp1) + Number(result)
-  currentDisplay.innerHTML = final
-  
-  
   // console.log(constant)
   // console.log(coeff)
 
@@ -143,13 +156,46 @@ function add() {
 }
 
 function subtract() {
-  
+  subtraction = true
+  temp1 = outPutDisplay
+  isCoeff = false
+  result = 0
+  currentDisplay.innerHTML = "0"
+  outPutDisplay = "0"
+  // console.log(addition)
+  console.log("temp" + temp1)
+  // console.log("isCoeff" + isCoeff)
+  console.log(result)
+  console.log(outPutDisplay)
+  return temp1
 }
 
 function multiply() {
-  
+  multiplication = true
+  temp1 = outPutDisplay
+  isCoeff = false
+  result = 0
+  currentDisplay.innerHTML = "0"
+  outPutDisplay = "0"
+  // console.log(addition)
+  console.log("temp" + temp1)
+  // console.log("isCoeff" + isCoeff)
+  console.log(result)
+  console.log(outPutDisplay)
+  return temp1
 }
 
 function divide() {
-  
+  division = true
+  temp1 = outPutDisplay
+  isCoeff = false
+  result = 0
+  currentDisplay.innerHTML = "0"
+  outPutDisplay = "0"
+  // console.log(addition)
+  console.log("temp" + temp1)
+  // console.log("isCoeff" + isCoeff)
+  console.log(result)
+  console.log(outPutDisplay)
+  return temp1
 }
