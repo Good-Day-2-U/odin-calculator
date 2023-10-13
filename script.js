@@ -107,13 +107,13 @@ function calculate() {
   currentDisplay.innerHTML = final
   
   
-  console.log(constant)
-  console.log(coeff)
+  // console.log(constant)
+  // console.log(coeff)
 
+  
   coeff = 0
   constant = 0
-  coeff = final
-  console.log(coeff)
+  outPutDisplay = final
 }
 
 
@@ -129,7 +129,7 @@ function percentage() {
 //Addition
 function add() {
   addition = true
-  temp1 = result
+  temp1 = outPutDisplay
   isCoeff = false
   result = 0
   currentDisplay.innerHTML = "0"
