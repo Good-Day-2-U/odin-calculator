@@ -49,7 +49,7 @@ function addInput(event) {
   let clickedNum = event.target;
   let temp = clickedNum.innerHTML;
 
-  if (outPutDisplay.charAt(0) == "0") {
+  if (input.charAt(0) === "0") {
     input = "";
     outPutDisplay = input + temp;
   } else {
@@ -139,18 +139,20 @@ function calculate() {
 // Add neagitve to front
 let minusNum = false
 function negPos() {
+  let outSideNum = outPutDisplay
   if (minusNum == false) {
-    let resultM = result * (-1)
+    let resultM = outSideNum * (-1)
     currentDisplay.innerHTML = resultM
     minusNum = true
     console.log(resultM)
     outPutDisplay = resultM
     return outPutDisplay
   } else {
-    let resultN = result * (-1)
+    let resultN = outSideNum * (-1)
     minusNum = false
     currentDisplay.innerHTML = resultN
     outPutDisplay = resultN
+    console.log(resultN)
     return outPutDisplay
   }
 }
