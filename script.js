@@ -49,7 +49,7 @@ function addInput(event) {
   let clickedNum = event.target;
   let temp = clickedNum.innerHTML;
 
-  if (outPutDisplay.charAt(0) == '0') {
+  if (outPutDisplay.charAt(0) == "0") {
     input = "";
     outPutDisplay = input + temp;
   } else {
@@ -93,22 +93,26 @@ let addition = false
 let subtraction = false
 let multiplication = false
 let division = false
+let percentageTF = false
 
 function calculate() {
   console.log('evaluate clicked')
 
   if (addition == true) {
     final = Number(temp1) + Number(result)
-    currentDisplay.innerHTML = final.toFixed(5)
+    currentDisplay.innerHTML = final.toFixed(3)
   } else if (subtraction == true) {
     final = Number(temp1) - Number(result)
-    currentDisplay.innerHTML = final.toFixed(5)
+    currentDisplay.innerHTML = final.toFixed(3)
   } else if (multiplication== true) {
     final = Number(temp1) * Number(result)
-    currentDisplay.innerHTML = final.toFixed(5)
+    currentDisplay.innerHTML = final.toFixed(3)
   } else if (division == true) {
     final = Number(temp1) / Number(result)
-    currentDisplay.innerHTML = final.toFixed(5)
+    currentDisplay.innerHTML = final.toFixed(3)
+  } else if (percentageTF == true) {
+    final = Number(temp1/100) * Number(result)
+    currentDisplay.innerHTML = final.toFixed(3)
   } else [
     null
   ]
@@ -120,6 +124,8 @@ function calculate() {
   subtraction = false
   multiplication = false
   division = false
+  percentageTF = false
+  
   // console.log(constant)
   // console.log(coeff)
 
@@ -130,12 +136,46 @@ function calculate() {
 }
 
 
+// Add neagitve to front
+let minusNum = false
+function negPos() {
+  if (minusNum == false) {
+    let resultM = result * (-1)
+    currentDisplay.innerHTML = resultM
+    minusNum = true
+    console.log(resultM)
+    outPutDisplay = resultM
+    return outPutDisplay
+  } else {
+    let resultN = result * (-1)
+    minusNum = false
+    currentDisplay.innerHTML = resultN
+    outPutDisplay = resultN
+    return outPutDisplay
+  }
+}
+
+
+
 
 // Add click and percentage
 document.querySelector(".percentage").addEventListener("click", percentage)
 
 function percentage() {
-  currentDisplay.innerHTML = (coeff/constant)*100
+  percentageTF = true
+  temp1 = outPutDisplay
+  isCoeff = false
+  result = 0
+  currentDisplay.innerHTML = "0"
+  outPutDisplay = "0"
+  // console.log(addition)
+  console.log("temp" + temp1)
+  // console.log("isCoeff" + isCoeff)
+  console.log(result)
+  console.log(outPutDisplay)
+  console.log(temp1)
+  return temp1
+  // currentDisplay.innerHTML = (coeff/constant)*100
 }
 
 
