@@ -6,6 +6,7 @@ let constant = 0;
 let operator;
 let result = 0;
 let temp1 = 0;
+let final;
 
 // let input;
 
@@ -20,17 +21,17 @@ let isCoeff = true;
 
 // Decide to show coefficient or constant on display
 if (isCoeff == true) {
-  // coeff = temp
-  currentDisplay.innerHTML = result
+  // coeff = result
+  currentDisplay.innerHTML = coeff
 } else {
   // constant = result
-  currentDisplay.innerHTML = temp1
+  currentDisplay.innerHTML = constant
 }
 
 
 
 // Display in console
-console.log("Display" + outPutDisplay)
+// console.log("Display" + outPutDisplay)
 
 
 
@@ -48,7 +49,7 @@ function addInput(event) {
   let clickedNum = event.target;
   let temp = clickedNum.innerHTML;
 
-  if (outPutDisplay.charAt(0) === '0') {
+  if (outPutDisplay.charAt(0) == '0') {
     input = "";
     outPutDisplay = input + temp;
   } else {
@@ -96,7 +97,7 @@ let division = false
 function calculate() {
   console.log('evaluate clicked')
 
-  isCoeff = true
+  // isCoeff = true
   addition = false
   subtraction = false
   multiplication = false
@@ -104,6 +105,15 @@ function calculate() {
 
   final = Number(temp1) + Number(result)
   currentDisplay.innerHTML = final
+  
+  
+  console.log(constant)
+  console.log(coeff)
+
+  coeff = 0
+  constant = 0
+  coeff = final
+  console.log(coeff)
 }
 
 
@@ -123,10 +133,12 @@ function add() {
   isCoeff = false
   result = 0
   currentDisplay.innerHTML = "0"
-  console.log(addition)
+  outPutDisplay = "0"
+  // console.log(addition)
   console.log("temp" + temp1)
-  console.log("isCoeff" + isCoeff)
+  // console.log("isCoeff" + isCoeff)
   console.log(result)
+  console.log(outPutDisplay)
   return temp1
 }
 
